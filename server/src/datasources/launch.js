@@ -1,7 +1,7 @@
-const { RESTDatSource } = require("apollo-datasource-rest");
+const { RESTDataSource } = require("apollo-datasource-rest");
 
 class LaunchAPI extends RESTDataSource {
-  construbor() {
+  constructor() {
     super();
     this.baseURL = "https://api.spacexdata.com/v2/";
 	}
@@ -23,10 +23,10 @@ class LaunchAPI extends RESTDataSource {
 			mission: {
 				name: launch.mission_name,
 				missionPatchSmall: launch.links.mission_patch_small,
-				missionPatchlarge: launch.links.mission_patch,
+				missionPatchLarge: launch.links.mission_patch,
 			},
 			rocket: {
-				id: launch.rtocket.rocket_id,
+				id: launch.rocket.rocket_id,
 				name: launch.rocket.rocket_name,
 				type: launch.rocket.rocket_type,
 			},
