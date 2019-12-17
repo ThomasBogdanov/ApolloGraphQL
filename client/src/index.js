@@ -1,4 +1,13 @@
-const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./schema');
+import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
 
-const server = new ApolloServer({ typeDefs });
+const cache = new InMemoryCache();
+const link = new HttpLink({
+    uri: 'http://localhost:4000/'
+});
+
+const client = new ApolloClient({
+    cache,
+    link
+});
