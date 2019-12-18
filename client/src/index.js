@@ -12,9 +12,9 @@ import { resolvers, typeDefs } from './resolvers';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Pages from './pages';
 
 const cache = new InMemoryCache();
+// eslint-disable-next-line
 const link = new HttpLink({
     uri: 'http://localhost:4000/'
 });
