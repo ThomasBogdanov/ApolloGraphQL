@@ -4,6 +4,8 @@ import { HttpLink } from 'apollo-link-http';
 import gql from "graphql-tag";
 
 import { ApolloProvider } from '@apollo/react-hooks';
+import { resolvers, typeDefs } from './resolvers';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Pages from './pages';
@@ -21,6 +23,8 @@ const client = new ApolloClient({
             authorization: localStorage.getItem('token'),
         },
     }),
+    typeDefs,
+    resolvers,
 });
 
 cache.writeData({
